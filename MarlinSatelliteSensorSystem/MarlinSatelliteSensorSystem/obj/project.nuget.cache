@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "O7jkvWWCBBI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\30106121\\.nuget\\packages\\extended.wpf.toolkit\\5.0.0\\extended.wpf.toolkit.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
