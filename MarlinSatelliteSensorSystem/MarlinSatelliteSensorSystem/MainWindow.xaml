@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarlinSatelliteSensorSystem" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="815" Background="#FFE6F3F2">
+        Title="MainWindow" Height="492" Width="815" Background="#FFE6F3F2">
     <Grid>
         <Border x:Name="LoadingGroup" BorderBrush="#FF2F4569" BorderThickness="2" Margin="10,36,0,0" HorizontalAlignment="Left" Width="210" Height="108" VerticalAlignment="Top"/>
         <xctk:IntegerUpDown x:Name="MeanInput" Value="78" Minimum="0" Margin="44,64,0,0" HorizontalAlignment="Left" Width="56" Height="36" VerticalAlignment="Top"/>
@@ -16,7 +16,7 @@
 
         <Label x:Name="LoadSectLabel" Content="Data Loading" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
-        <ListView x:Name="DoubleDataView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,159,0,0" HorizontalAlignment="Left" Width="210" Height="256" VerticalAlignment="Top">
+        <ListView x:Name="DoubleDataView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,159,0,0" HorizontalAlignment="Left" Width="210" Height="298" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Sensor A" Width="100"/>
@@ -25,14 +25,14 @@
             </ListView.View>
         </ListView>
 
-        <Border x:Name="SortAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,215,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
+        <Border x:Name="SortAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,280,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
 
-        <RadioButton x:Name="SelectSortA" Content="Selection Sort" HorizontalAlignment="Left" Margin="249,227,0,0" VerticalAlignment="Top"
+        <RadioButton x:Name="SelectSortA" Content="Selection Sort" HorizontalAlignment="Left" Margin="249,292,0,0" VerticalAlignment="Top"
                      GroupName="SortingA"/>
-        <RadioButton x:Name="InsertSortA" Content="Insertion Sort" HorizontalAlignment="Left" Margin="249,247,0,0" VerticalAlignment="Top"
+        <RadioButton x:Name="InsertSortA" Content="Insertion Sort" HorizontalAlignment="Left" Margin="249,312,0,0" VerticalAlignment="Top"
                      GroupName="SortingA"/>
-        <Button x:Name="SortButtonA" Content="Sort" HorizontalAlignment="Left" Margin="263,267,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
-        <Label x:Name="SortingASectLabel" Content="Sorting A" HorizontalAlignment="Left" Margin="236,189,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
+        <Button x:Name="SortButtonA" Content="Sort" HorizontalAlignment="Left" Margin="263,332,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
+        <Label x:Name="SortingASectLabel" Content="Sorting A" HorizontalAlignment="Left" Margin="236,254,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
         <Border x:Name="SearchAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
@@ -44,17 +44,17 @@
         <Button x:Name="SearchButtonA" Content="Search" HorizontalAlignment="Left" Margin="263,136,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
         <Label x:Name="SearchingASectLabel" Content="Searching A" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
-        <ListBox x:Name="SensorAListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="375,41,0,0" HorizontalAlignment="Left" Width="137" Height="374" VerticalAlignment="Top"/>
+        <ListBox x:Name="SensorAListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="375,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
         <Label x:Name="SensorALabel" Content="Sensor A Data" HorizontalAlignment="Left" Margin="375,6,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold" FontSize="16"/>
 
-        <Border x:Name="SortBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,215,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
+        <Border x:Name="SortBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,280,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
 
-        <RadioButton x:Name="SelectSortB" Content="Selection Sort" HorizontalAlignment="Left" Margin="543,227,0,0" VerticalAlignment="Top"
+        <RadioButton x:Name="SelectSortB" Content="Selection Sort" HorizontalAlignment="Left" Margin="543,292,0,0" VerticalAlignment="Top"
             GroupName="SortingB"/>
-        <RadioButton x:Name="InsertSortA_Copy" Content="Insertion Sort" HorizontalAlignment="Left" Margin="543,247,0,0" VerticalAlignment="Top"
+        <RadioButton x:Name="InsertSortA_Copy" Content="Insertion Sort" HorizontalAlignment="Left" Margin="543,312,0,0" VerticalAlignment="Top"
             GroupName="SortingB"/>
-        <Button x:Name="SortButtonB" Content="Sort" HorizontalAlignment="Left" Margin="557,267,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
-        <Label x:Name="SortingBSectLabel" Content="Sorting B" HorizontalAlignment="Left" Margin="530,189,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
+        <Button x:Name="SortButtonB" Content="Sort" HorizontalAlignment="Left" Margin="557,332,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
+        <Label x:Name="SortingBSectLabel" Content="Sorting B" HorizontalAlignment="Left" Margin="530,254,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
         <Border x:Name="SearchBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
@@ -65,9 +65,30 @@
             GroupName="SearchingB"/>
         <Button x:Name="SearchButtonB" Content="Search" HorizontalAlignment="Left" Margin="557,136,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
         <Label x:Name="SearchingBSectLabel" Content="Searching B" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
-        
-        <ListBox x:Name="SensorBListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="670,41,0,0" HorizontalAlignment="Left" Width="137" Height="374" VerticalAlignment="Top"/>
+
+        <ListBox x:Name="SensorBListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="670,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
         <Label x:Name="SensorBLabel" Content="Sensor B Data" HorizontalAlignment="Left" Margin="670,5,0,0" VerticalAlignment="Top" Width="135" FontWeight="Bold" FontSize="16"/>
+
+        <Label x:Name="RecSpeedALabel" Content="Recursive Speed" HorizontalAlignment="Left" Margin="236,175,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="RecursiveSpeedADisplay" HorizontalAlignment="Left" Margin="236,197,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="IterSpeedALabel" Content="Iterative Speed" HorizontalAlignment="Left" Margin="237,214,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="IterativeSpeedADisplay" HorizontalAlignment="Left" Margin="236,237,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+
+        <Label x:Name="RecSpeedBLabel" Content="Recursive Speed" HorizontalAlignment="Left" Margin="530,176,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="RecursiveSpeedBDisplay" HorizontalAlignment="Left" Margin="530,198,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="IterSpeedBLabel" Content="Iterative Speed" HorizontalAlignment="Left" Margin="531,215,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="IterativeSpeedBDisplay" HorizontalAlignment="Left" Margin="530,238,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+
+        <Label x:Name="SelectSpeedALabel" Content="Selection Speed" HorizontalAlignment="Left" Margin="238,377,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="SelectionSpeedADisplay" HorizontalAlignment="Left" Margin="238,399,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="InsertSpeedALabel" Content="Insertion Speed" HorizontalAlignment="Left" Margin="239,416,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="InsertionSpeedADisplay" HorizontalAlignment="Left" Margin="238,439,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+        
+        <Label x:Name="SelectSpeedBLabel" Content="Selection Speed" HorizontalAlignment="Left" Margin="530,377,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="SelectionSpeedBDisplay" HorizontalAlignment="Left" Margin="530,399,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="InsertSpeedBLabel" Content="Insertion Speed" HorizontalAlignment="Left" Margin="531,416,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
+        <TextBox x:Name="InsertionSpeedBDisplay" HorizontalAlignment="Left" Margin="530,439,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
+
 
 
 

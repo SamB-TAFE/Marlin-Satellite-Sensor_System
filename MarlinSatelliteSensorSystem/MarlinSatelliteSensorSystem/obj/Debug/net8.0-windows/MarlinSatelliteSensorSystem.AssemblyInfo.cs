@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarlinSatelliteSensorSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78b8d0da6c0a61cf7f7605ebcf7b600702c09f5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75cbd44c94218373b51b0d59659c63fb64f3d154")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarlinSatelliteSensorSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarlinSatelliteSensorSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

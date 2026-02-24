@@ -18,8 +18,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,9 +48,10 @@
               "RelativeDocumentMoniker": "MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
               "RelativeToolTip": "MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T05:01:03.411Z"
+              "WhenOpened": "2026-02-17T05:01:03.411Z",
+              "EditorCaption": ""
             }
           ]
         }
