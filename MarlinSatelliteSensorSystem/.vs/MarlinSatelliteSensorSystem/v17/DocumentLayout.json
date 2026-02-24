@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{4DD46279-FF1E-4FA1-BA26-AE074A796C80}|MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj|solutionrelative:marlinsatellitesensorsystem\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4DD46279-FF1E-4FA1-BA26-AE074A796C80}|MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj|c:\\users\\30106121\\documents\\github\\marlin-satellite-sensor_system\\marlinsatellitesensorsystem\\marlinsatellitesensorsystem\\marlinsatellitesensorsystem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4DD46279-FF1E-4FA1-BA26-AE074A796C80}|MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj|solutionrelative:marlinsatellitesensorsystem\\marlinsatellitesensorsystem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4DD46279-FF1E-4FA1-BA26-AE074A796C80}|MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj|c:\\users\\30106121\\documents\\github\\marlin-satellite-sensor_system\\marlinsatellitesensorsystem\\marlinsatellitesensorsystem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4DD46279-FF1E-4FA1-BA26-AE074A796C80}|MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj|solutionrelative:marlinsatellitesensorsystem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,6 +35,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MarlinSatelliteSensorSystem",
+              "DocumentMoniker": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj",
+              "RelativeDocumentMoniker": "MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj",
+              "ToolTip": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj",
+              "RelativeToolTip": "MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-24T07:01:31.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MarlinSatelliteSensorSystem\\MainWindow.xaml",
@@ -48,7 +64,7 @@
               "RelativeDocumentMoniker": "MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\30106121\\Documents\\GitHub\\Marlin-Satellite-Sensor_System\\MarlinSatelliteSensorSystem\\MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
               "RelativeToolTip": "MarlinSatelliteSensorSystem\\MainWindow.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwv0EAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAswLsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T05:01:03.411Z",
               "EditorCaption": ""
