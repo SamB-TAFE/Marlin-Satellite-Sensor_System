@@ -10,17 +10,17 @@
         <Border x:Name="LoadingGroup" BorderBrush="#FF2F4569" BorderThickness="2" Margin="10,36,0,0" HorizontalAlignment="Left" Width="210" Height="108" VerticalAlignment="Top"/>
         <xctk:IntegerUpDown x:Name="MeanInput" Value="78" Minimum="0" Margin="44,64,0,0" HorizontalAlignment="Left" Width="56" Height="36" VerticalAlignment="Top"/>
         <xctk:IntegerUpDown x:Name="DevInput" Value="6" Minimum="1"  Margin="122,64,0,0" HorizontalAlignment="Left" Width="56" Height="36" VerticalAlignment="Top"/>
-        <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left" Margin="61,105,0,0" VerticalAlignment="Top" Height="29" Width="108"/>
+        <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left" Margin="61,105,0,0" VerticalAlignment="Top" Height="29" Width="108" Click="LoadDataButton_Click"/>
         <Label x:Name="MeanLabel" Content="Mean" HorizontalAlignment="Left" Margin="52,41,0,0" VerticalAlignment="Top"/>
         <Label x:Name="DevLabel" Content="Standard Dev" HorizontalAlignment="Left" Margin="107,41,0,0" VerticalAlignment="Top" Width="86"/>
 
         <Label x:Name="LoadSectLabel" Content="Data Loading" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
-        <ListView x:Name="DoubleDataView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,159,0,0" HorizontalAlignment="Left" Width="210" Height="298" VerticalAlignment="Top">
+        <ListView x:Name="DoubleDataView" Margin="10,159,0,0" HorizontalAlignment="Left" Width="210" Height="298" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Sensor A" Width="100"/>
-                    <GridViewColumn Header="Sensor B" Width="100"/>
+                    <GridViewColumn Header="Sensor A" Width="100" DisplayMemberBinding="{Binding ValueA}"/>
+                    <GridViewColumn Header="Sensor B" Width="100" DisplayMemberBinding="{Binding ValueB}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -44,7 +44,7 @@
         <Button x:Name="SearchButtonA" Content="Search" HorizontalAlignment="Left" Margin="263,136,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
         <Label x:Name="SearchingASectLabel" Content="Searching A" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
-        <ListBox x:Name="SensorAListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="375,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
+        <ListBox x:Name="SensorAListBox" Margin="375,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
         <Label x:Name="SensorALabel" Content="Sensor A Data" HorizontalAlignment="Left" Margin="375,6,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold" FontSize="16"/>
 
         <Border x:Name="SortBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,280,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
@@ -66,7 +66,7 @@
         <Button x:Name="SearchButtonB" Content="Search" HorizontalAlignment="Left" Margin="557,136,0,0" VerticalAlignment="Top" Height="31" Width="64"/>
         <Label x:Name="SearchingBSectLabel" Content="Searching B" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
-        <ListBox x:Name="SensorBListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="670,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
+        <ListBox x:Name="SensorBListBox" Margin="670,41,0,0" HorizontalAlignment="Left" Width="137" Height="416" VerticalAlignment="Top"/>
         <Label x:Name="SensorBLabel" Content="Sensor B Data" HorizontalAlignment="Left" Margin="670,5,0,0" VerticalAlignment="Top" Width="135" FontWeight="Bold" FontSize="16"/>
 
         <Label x:Name="RecSpeedALabel" Content="Recursive Speed" HorizontalAlignment="Left" Margin="236,175,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
@@ -88,12 +88,6 @@
         <TextBox x:Name="SelectionSpeedBDisplay" HorizontalAlignment="Left" Margin="530,399,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="InsertSpeedBLabel" Content="Insertion Speed" HorizontalAlignment="Left" Margin="531,416,0,0" VerticalAlignment="Top" Width="105" Height="27"/>
         <TextBox x:Name="InsertionSpeedBDisplay" HorizontalAlignment="Left" Margin="530,439,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="120"/>
-
-
-
-
-
-
 
     </Grid>
 </Window>
