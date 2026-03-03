@@ -30,6 +30,8 @@ namespace MarlinSatelliteSensorSystem
             InitializeComponent();
             SearchButtonA.IsEnabled = false;
             SearchButtonB.IsEnabled = false;
+            SortButtonA.IsEnabled = false;
+            SortButtonB.IsEnabled = false;
         }
 
         public void LoadData(double mu, double sigma)
@@ -101,11 +103,11 @@ namespace MarlinSatelliteSensorSystem
             int min = 0;
             int max = NumberOfNodes(linkList);
 
-            for (int i = 0; i < (max - 1); i++)
+            for (int i = 0; i < max; i++)
             {
                 min = i;
 
-                for (int j = i + 1; j < (max - 1); j++)
+                for (int j = i + 1; j < max; j++)
                 {
                     if (linkList.ElementAt(j) <  linkList.ElementAt(min))
                     {
@@ -199,6 +201,7 @@ namespace MarlinSatelliteSensorSystem
         public static string GatherAnalytics(Stopwatch timer, Dictionary<string, double> analytics, string functionTimed)
         {
             double.TryParse(timer.ElapsedMilliseconds.ToString(), out double elapsedTime);
+            analytics.Remove(functionTimed);
             analytics.Add(functionTimed, elapsedTime);
             return timer.ElapsedMilliseconds.ToString();
         }
@@ -211,6 +214,8 @@ namespace MarlinSatelliteSensorSystem
                 ShowAllSensorData();
                 DisplayListboxData(sensorA, SensorAListBox);
                 DisplayListboxData(sensorB, SensorBListBox);
+                SortButtonA.IsEnabled = true;
+                SortButtonB.IsEnabled = true;
             }
             else
             {
@@ -280,6 +285,7 @@ namespace MarlinSatelliteSensorSystem
             if (isSortedA == false)
             {
                 isSortedA = true;
+                SearchButtonA.IsEnabled = true;
             }
         }
 
@@ -345,6 +351,29 @@ namespace MarlinSatelliteSensorSystem
             if (isSortedB == false)
             {
                 isSortedB = true;
+                SearchButtonB.IsEnabled = true;
+            }
+        }
+
+        private void SearchAInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (isSortedA)
+            {
+                if (!int.TryParse(SearchAInput.Text, out int parsedNumber))
+                {
+                    MessageBox.Show("Please enter a valid number");
+                }
+            }
+        }
+
+        private void SearchBInput_LostFocus(object sender, RoutedEventArgs e)
+        { 
+            if (isSortedB)
+            {
+                if (!int.TryParse(SearchBInput.Text, out int parsedNumber))
+                {
+                    MessageBox.Show("Please enter a valid number");
+                }
             }
         }
     }

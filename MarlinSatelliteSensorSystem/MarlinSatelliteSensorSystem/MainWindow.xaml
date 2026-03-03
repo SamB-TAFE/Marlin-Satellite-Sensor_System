@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarlinSatelliteSensorSystem" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="492" Width="815" Background="#FFE6F3F2">
+        Title="MainWindow" Height="512" Width="850" Background="#FFE6F3F2">
     <Grid>
         <Border x:Name="LoadingGroup" BorderBrush="#FF2F4569" BorderThickness="2" Margin="10,36,0,0" HorizontalAlignment="Left" Width="210" Height="108" VerticalAlignment="Top"/>
         <xctk:IntegerUpDown x:Name="MeanInput" 
@@ -36,7 +36,7 @@
         <Border x:Name="SortAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,280,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
 
         <RadioButton x:Name="SelectSortA" Content="Selection Sort" HorizontalAlignment="Left" Margin="249,292,0,0" VerticalAlignment="Top"
-                     GroupName="SortingA"/>
+                     GroupName="SortingA" IsChecked="True"/>
         <RadioButton x:Name="InsertSortA" Content="Insertion Sort" HorizontalAlignment="Left" Margin="249,312,0,0" VerticalAlignment="Top"
                      GroupName="SortingA"/>
         <Button x:Name="SortButtonA" Content="Sort" HorizontalAlignment="Left" Margin="263,332,0,0" VerticalAlignment="Top" Height="31" Width="64" Click="SortButtonA_Click"/>
@@ -44,9 +44,9 @@
 
         <Border x:Name="SearchAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="SearchAInput" TextWrapping="Wrap" Text="Search Number" Margin="249,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92"/>
+        <TextBox x:Name="SearchAInput" TextWrapping="Wrap" Margin="249,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchAInput_LostFocus" Text="Search Number"/>
         <RadioButton x:Name="RecursiveSearchA" Content="Recursive Search" HorizontalAlignment="Left" Margin="244,93,0,0" VerticalAlignment="Top"
-            GroupName="SearchingA"/>
+            GroupName="SearchingA" IsChecked="True"/>
         <RadioButton x:Name="IterativeSearchA" Content="Iterative Search" HorizontalAlignment="Left" Margin="244,110,0,0" VerticalAlignment="Top"
             GroupName="SearchingA"/>
         <Button x:Name="SearchButtonA" Content="Search" HorizontalAlignment="Left" Margin="263,136,0,0" VerticalAlignment="Top" Height="31" Width="64" Click="SearchButtonA_Click"/>
@@ -58,17 +58,17 @@
         <Border x:Name="SortBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,280,0,0" HorizontalAlignment="Left" Width="124" Height="94" VerticalAlignment="Top"/>
 
         <RadioButton x:Name="SelectSortB" Content="Selection Sort" HorizontalAlignment="Left" Margin="543,292,0,0" VerticalAlignment="Top"
-            GroupName="SortingB"/>
-        <RadioButton x:Name="InsertSortA_Copy" Content="Insertion Sort" HorizontalAlignment="Left" Margin="543,312,0,0" VerticalAlignment="Top"
+            GroupName="SortingB" IsChecked="True"/>
+        <RadioButton x:Name="InsertSortB" Content="Insertion Sort" HorizontalAlignment="Left" Margin="543,312,0,0" VerticalAlignment="Top"
             GroupName="SortingB"/>
         <Button x:Name="SortButtonB" Content="Sort" HorizontalAlignment="Left" Margin="557,332,0,0" VerticalAlignment="Top" Height="31" Width="64" Click="SortButtonB_Click"/>
         <Label x:Name="SortingBSectLabel" Content="Sorting B" HorizontalAlignment="Left" Margin="530,254,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
 
         <Border x:Name="SearchBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="SearchBInput" TextWrapping="Wrap" Text="Search Number" Margin="543,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92"/>
+        <TextBox x:Name="SearchBInput" TextWrapping="Wrap" Text="Search Number" Margin="543,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchBInput_LostFocus"/>
         <RadioButton x:Name="RecursiveSearchB" Content="Recursive Search" HorizontalAlignment="Left" Margin="538,93,0,0" VerticalAlignment="Top"
-            GroupName="SearchingB"/>
+            GroupName="SearchingB" IsChecked="True"/>
         <RadioButton x:Name="IterativeSearchB" Content="Iterative Search" HorizontalAlignment="Left" Margin="538,110,0,0" VerticalAlignment="Top"
             GroupName="SearchingB"/>
         <Button x:Name="SearchButtonB" Content="Search" HorizontalAlignment="Left" Margin="557,136,0,0" VerticalAlignment="Top" Height="31" Width="64" Click="SearchButtonB_Click"/>
