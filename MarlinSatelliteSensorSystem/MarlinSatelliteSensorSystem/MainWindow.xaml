@@ -44,7 +44,7 @@
 
         <Border x:Name="SearchAGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="236,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="SearchAInput" TextWrapping="Wrap" Margin="249,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchAInput_LostFocus" Text="Search Number"/>
+        <TextBox x:Name="SearchAInput" TextWrapping="Wrap" Margin="249,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchAInput_LostFocus" Text="Search Number" GotFocus="SearchAInput_GotFocus"/>
         <RadioButton x:Name="RecursiveSearchA" Content="Recursive Search" HorizontalAlignment="Left" Margin="244,93,0,0" VerticalAlignment="Top"
             GroupName="SearchingA" IsChecked="True"/>
         <RadioButton x:Name="IterativeSearchA" Content="Iterative Search" HorizontalAlignment="Left" Margin="244,110,0,0" VerticalAlignment="Top"
@@ -66,7 +66,7 @@
 
         <Border x:Name="SearchBGroup" BorderBrush="#FF2F4569" BorderThickness="1.5" Margin="530,41,0,0" HorizontalAlignment="Left" Width="124" Height="134" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="SearchBInput" TextWrapping="Wrap" Text="Search Number" Margin="543,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchBInput_LostFocus"/>
+        <TextBox x:Name="SearchBInput" TextWrapping="Wrap" Text="Search Number" Margin="543,58,0,0" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92" LostFocus="SearchBInput_LostFocus" GotFocus="SearchBInput_GotFocus"/>
         <RadioButton x:Name="RecursiveSearchB" Content="Recursive Search" HorizontalAlignment="Left" Margin="538,93,0,0" VerticalAlignment="Top"
             GroupName="SearchingB" IsChecked="True"/>
         <RadioButton x:Name="IterativeSearchB" Content="Iterative Search" HorizontalAlignment="Left" Margin="538,110,0,0" VerticalAlignment="Top"

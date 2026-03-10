@@ -115,7 +115,7 @@ namespace MarlinSatelliteSensorSystem
                     }
                 }
 
-                LinkedListNode<double> currentMin = linkList.Find(linkList.ElementAt(min));
+                LinkedListNode<double> currentMin = GetNodeAt(min, linkList);
                 LinkedListNode<double> currentI = linkList.Find(linkList.ElementAt(i));
 
                 var temp = currentMin.Value;
@@ -136,8 +136,8 @@ namespace MarlinSatelliteSensorSystem
                 {
                     if (linkList.ElementAt(j - 1) > linkList.ElementAt(j))
                     {
-                        LinkedListNode<double> current = linkList.Find(linkList.ElementAt(j));
-                        LinkedListNode<double> previous = linkList.Find(linkList.ElementAt(j - 1));
+                        LinkedListNode<double> current = GetNodeAt(j, linkList);
+                        LinkedListNode<double> previous = GetNodeAt(j - 1, linkList);
 
                         var temp = current.Value;
                         current.Value = previous.Value;
@@ -149,9 +149,35 @@ namespace MarlinSatelliteSensorSystem
             return true;
         }
 
+        private bool IsSorted(LinkedList<double> sensorData)
+        {
+            int numberOfNodes = NumberOfNodes(sensorData);
+
+            for (int i = 0; i < numberOfNodes - 1; i++)
+            {
+                if (sensorData.ElementAt(i) > sensorData.ElementAt(i + 1))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private static LinkedListNode<double> GetNodeAt(int index, LinkedList<double> linkList)
+        {
+            int count = 0;
+            var node = linkList.First;
+            while (count != index)
+            {
+                count++;
+                node = node.Next;
+            }
+            return node;
+        }
+
         public static int BinarySearchIterative(LinkedList<double> linkList, double searchValue, int listMin, int listMax)
         {
-            while (listMin <= listMax - 1)
+            while (listMin <= listMax)
             {
                 int middle = (listMin + listMax) / 2;
 
@@ -176,7 +202,7 @@ namespace MarlinSatelliteSensorSystem
 
         public static int BinarySearchRecursive(LinkedList<double> linkList, double searchValue, int listMin, int listMax)
         {
-            if (listMin <= listMax - 1)
+            if (listMin <= listMax)
             {
                 int middle = (listMin + listMax) / 2;
 
@@ -200,10 +226,10 @@ namespace MarlinSatelliteSensorSystem
 
         public static string GatherAnalytics(Stopwatch timer, Dictionary<string, double> analytics, string functionTimed)
         {
-            double.TryParse(timer.ElapsedMilliseconds.ToString(), out double elapsedTime);
+            double.TryParse(timer.Elapsed.TotalMilliseconds.ToString(), out double elapsedTime);
             analytics.Remove(functionTimed);
             analytics.Add(functionTimed, elapsedTime);
-            return timer.ElapsedMilliseconds.ToString();
+            return timer.Elapsed.TotalMilliseconds.ToString();
         }
 
         private void LoadDataButton_Click(object sender, RoutedEventArgs e)
@@ -214,8 +240,7 @@ namespace MarlinSatelliteSensorSystem
                 ShowAllSensorData();
                 DisplayListboxData(sensorA, SensorAListBox);
                 DisplayListboxData(sensorB, SensorBListBox);
-                SortButtonA.IsEnabled = true;
-                SortButtonB.IsEnabled = true;
+                NewDataReset();
             }
             else
             {
@@ -223,9 +248,27 @@ namespace MarlinSatelliteSensorSystem
             }
         }
 
+        private void NewDataReset()
+        {
+            SortButtonA.IsEnabled = true;
+            SortButtonB.IsEnabled = true;
+            SearchButtonA.IsEnabled = false;
+            SearchButtonB.IsEnabled = false;
+            SearchAInput.Clear();
+            SearchBInput.Clear();
+            RecursiveSpeedADisplay.Clear();
+            RecursiveSpeedBDisplay.Clear();
+            IterativeSpeedADisplay.Clear();
+            IterativeSpeedBDisplay.Clear();
+            SelectionSpeedADisplay.Clear();
+            SelectionSpeedBDisplay.Clear();
+            InsertionSpeedADisplay.Clear();
+            InsertionSpeedBDisplay.Clear();
+        }
+
         private void SearchButtonA_Click(object sender, RoutedEventArgs e)
         {
-            if (isSortedA)
+            if (IsSorted(sensorA))
             {
                 if (double.TryParse(SearchAInput.Text.ToLower(), out double searchTerm))
                 {
@@ -236,7 +279,7 @@ namespace MarlinSatelliteSensorSystem
                         stopwatch.Stop();
                         string elapsed = GatherAnalytics(stopwatch, analyticsA, "recursive");
                         RecursiveSpeedADisplay.Text = elapsed + " ms";
-                        SensorAListBox.SelectedIndex = listBoxIndex;
+                        HighlightAllMatches(searchTerm, listBoxIndex, SensorAListBox, sensorA);
                     }
                     else
                     {
@@ -245,7 +288,7 @@ namespace MarlinSatelliteSensorSystem
                         stopwatch.Stop();
                         string elapsed = GatherAnalytics(stopwatch, analyticsA, "iterative");
                         IterativeSpeedADisplay.Text = elapsed + " ms";
-                        SensorAListBox.SelectedIndex = listBoxIndex;
+                        HighlightAllMatches(searchTerm, listBoxIndex, SensorAListBox, sensorA);
                     }
                 }
                 else
@@ -291,7 +334,7 @@ namespace MarlinSatelliteSensorSystem
 
         private void SearchButtonB_Click(object sender, RoutedEventArgs e)
         {
-            if (isSortedB)
+            if (IsSorted(sensorB))
             {
                 if (double.TryParse(SearchBInput.Text.ToLower(), out double searchTerm))
                 {
@@ -302,7 +345,7 @@ namespace MarlinSatelliteSensorSystem
                         stopwatch.Stop();
                         string elapsed = GatherAnalytics(stopwatch, analyticsB, "recursive");
                         RecursiveSpeedBDisplay.Text = elapsed + " ms";
-                        SensorBListBox.SelectedIndex = listBoxIndex;
+                        HighlightAllMatches(searchTerm, listBoxIndex, SensorBListBox, sensorB);
                     }
                     else
                     {
@@ -311,8 +354,9 @@ namespace MarlinSatelliteSensorSystem
                         stopwatch.Stop();
                         string elapsed = GatherAnalytics(stopwatch, analyticsB, "iterative");
                         IterativeSpeedBDisplay.Text = elapsed + " ms";
-                        SensorBListBox.SelectedIndex = listBoxIndex;
+                        HighlightAllMatches(searchTerm, listBoxIndex, SensorBListBox, sensorB);
                     }
+
                 }
                 else
                 {
@@ -355,26 +399,63 @@ namespace MarlinSatelliteSensorSystem
             }
         }
 
-        private void SearchAInput_LostFocus(object sender, RoutedEventArgs e)
+        private void HighlightAllMatches(double search, int resultIndex, ListBox listBox, LinkedList<double> linkList)
         {
-            if (isSortedA)
+
+            LinkedListNode<double> resultNode = GetNodeAt(resultIndex, linkList);
+            double result = resultNode.Value;
+
+            double floorSearch = Math.Floor(search);
+            double floorResult = Math.Floor(result);
+
+            if (search == result)
             {
-                if (!int.TryParse(SearchAInput.Text, out int parsedNumber))
+                listBox.SelectedItem = linkList.ElementAt(resultIndex);
+                
+            }
+            else if (floorSearch == floorResult)
+            {
+                listBox.SelectionMode = SelectionMode.Multiple;
+
+                foreach (var item in listBox.Items)
                 {
-                    MessageBox.Show("Please enter a valid number");
+                    double listValue = (double)item;
+                    if (Math.Floor(listValue) == floorSearch)
+                    {
+                        listBox.SelectedItems.Add(item);
+                    }
                 }
+            }
+            else
+            {
+                listBox.SelectedItem = linkList.ElementAt(resultIndex);
             }
         }
 
-        private void SearchBInput_LostFocus(object sender, RoutedEventArgs e)
-        { 
-            if (isSortedB)
+        private void SearchAInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(SearchAInput.Text, out int parsedNumber))
             {
-                if (!int.TryParse(SearchBInput.Text, out int parsedNumber))
-                {
-                    MessageBox.Show("Please enter a valid number");
-                }
+                MessageBox.Show("Please enter a valid number");
             }
+        }
+
+        private void SearchAInput_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchAInput.Clear();
+        }
+
+        private void SearchBInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(SearchBInput.Text, out int parsedNumber))
+            {
+                MessageBox.Show("Please enter a valid number");
+            }
+        }
+
+        private void SearchBInput_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBInput.Clear();
         }
     }
 }
